@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Real Estate Admin SaaS - モックアップ</title>
+  
+  <!-- Font Awesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-icon">
+          <i class="fas fa-building"></i>
+        </div>
+        <div class="logo-text">EstatePro</div>
+      </div>
+      
+      <nav class="sidebar-menu">
+        <div class="menu-section-title">メインメニュー</div>
+        <a href="#dashboard" class="menu-item active" data-view="dashboard">
+          <i class="fas fa-th-large"></i> ダッシュボード
+        </a>
+        <a href="#properties" class="menu-item" data-view="properties">
+          <i class="fas fa-city"></i> 物件管理
+        </a>
+        <a href="#revenue" class="menu-item" data-view="revenue">
+          <i class="fas fa-chart-line"></i> 収益管理
+        </a>
+        <a href="#vacancy" class="menu-item" data-view="vacancy">
+          <i class="fas fa-key"></i> 空室管理
+        </a>
+        
+        <div class="menu-section-title" style="margin-top: 1.5rem;">分析・ツール</div>
+        <a href="#reports" class="menu-item" data-view="reports">
+          <i class="fas fa-chart-pie"></i> レポート / 分析
+        </a>
+        <a href="#alerts" class="menu-item" data-view="alerts">
+          <i class="fas fa-bell"></i> 通知 / アラート
+        </a>
+        
+        <div class="menu-section-title" style="margin-top: 1.5rem;">設定</div>
+        <a href="#settings" class="menu-item" data-view="settings">
+          <i class="fas fa-cog"></i> 設定
+        </a>
+      </nav>
+      
+      <div class="sidebar-footer">
+        <div class="user-profile">
+          <img src="men.png" alt="User Avatar" class="user-avatar">
+          <div class="user-info">
+            <span>田中 太郎</span>
+            <small>プレミアムプラン</small>
+          </div>
+        </div>
+      </div>
+    </aside>
+    
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Header -->
+      <header class="header">
+        <div class="header-left">
+          <button class="icon-btn mobile-menu-toggle" id="menuToggle" style="display: none;">
+            <i class="fas fa-bars"></i>
+          </button>
+          <h1 class="header-title" id="pageTitle">ダッシュボード</h1>
+          
+          <div class="search-bar">
+            <i class="fas fa-search" style="color: var(--text-muted); font-size: 0.875rem;"></i>
+            <input type="text" placeholder="物件、入居者を検索...">
+          </div>
+        </div>
+        
+        <div class="header-right">
+          <button class="btn btn-outline">
+            <i class="fas fa-plus"></i> 物件追加
+          </button>
+          
+          <button class="icon-btn">
+            <i class="fas fa-bell"></i>
+            <span class="badge-dot"></span>
+          </button>
+          
+          <button class="icon-btn">
+            <i class="fas fa-question-circle"></i>
+          </button>
+        </div>
+      </header>
+      
+      <!-- Content Wrapper -->
+      <div class="content-wrapper" id="contentWrapper">
+        
+        <!-- View: Dashboard -->
+        <section id="dashboard" class="view active">
+          <!-- Placeholder - Will be filled via JS or direct HTML -->
+          <div class="dashboard-loading">読み込み中...</div>
+        </section>
+        
+        <!-- View: Properties -->
+        <section id="properties" class="view">
+          <h2>物件一覧</h2>
+          <p>物件一覧の内容がここに表示されます。</p>
+        </section>
+        
+        <!-- View: Property Detail -->
+        <section id="property-detail" class="view">
+          <h2>物件詳細</h2>
+          <button class="btn btn-outline back-to-list" style="margin-bottom: 1rem;">
+            <i class="fas fa-arrow-left"></i> 一覧に戻る
+          </button>
+          <div id="detailContent"></div>
+        </section>
+        
+        <!-- View: Revenue -->
+        <section id="revenue" class="view">
+          <h2>収益管理</h2>
+          <div class="card">収益の推移と分析チャートが表示されます。</div>
+        </section>
+        
+        <!-- View: Vacancy -->
+        <section id="vacancy" class="view">
+          <h2>空室管理</h2>
+          <div class="card">空室状況と入居募集のステータスが表示されます。</div>
+        </section>
+        
+        <!-- View: Reports -->
+        <section id="reports" class="view">
+          <h2>レポート / 分析</h2>
+          <div class="card">詳細な分析レポートが表示されます。</div>
+        </section>
+        
+        <!-- View: Alerts -->
+        <section id="alerts" class="view">
+          <h2>通知 / アラート</h2>
+          <div class="card">未読の通知一覧が表示されます。</div>
+        </section>
+        
+        <!-- View: Settings -->
+        <section id="settings" class="view">
+          <h2>設定</h2>
+          <div class="card">アカウント設定、通知設定、物件の基本データ設定が可能です。</div>
+        </section>
+        
+      </div>
+    </main>
+    
+  </div>
+
+  <!-- Scripts -->
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
+  <!-- Application JS -->
+  <script src="js/app.js"></script>
+</body>
+</html>
