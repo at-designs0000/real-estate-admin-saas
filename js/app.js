@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageTitle = document.getElementById('pageTitle');
     const menuToggle = document.getElementById('menuToggle');
     const sidebar = document.getElementById('sidebar');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const closeSidebar = document.getElementById('closeSidebar');
 
     // View Switching Logic
     const switchView = (targetViewId) => {
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Close mobile menu if open
         if (window.innerWidth <= 768) {
             sidebar.classList.remove('show');
+            sidebarOverlay.classList.remove('show');
         }
         
         // Initialize charts or specific view logic
@@ -65,6 +68,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuToggle) {
         menuToggle.addEventListener('click', () => {
             sidebar.classList.toggle('show');
+            sidebarOverlay.classList.toggle('show');
+        });
+    }
+
+    // Close Sidebar
+    if (closeSidebar) {
+        closeSidebar.addEventListener('click', () => {
+            sidebar.classList.remove('show');
+            sidebarOverlay.classList.remove('show');
+        });
+    }
+
+    // Overlay Click
+    if (sidebarOverlay) {
+        sidebarOverlay.addEventListener('click', () => {
+            sidebar.classList.remove('show');
+            sidebarOverlay.classList.remove('show');
         });
     }
 
@@ -734,6 +754,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         if (window.innerWidth > 768) {
             sidebar.classList.remove('show');
+            sidebarOverlay.classList.remove('show');
         }
     });
 });
